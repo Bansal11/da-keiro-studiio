@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Da Keiro Studiio — Luxury Unisex Salon</title>
-  <meta name="description" content="Da Keiro Studiio — Luxury Unisex Salon in Pehladpur, Surajkund Road, Delhi. Precision hair, dewy beauty rituals, couture makeup, and minimalist nail artistry.">
+  <meta name="description" content="Da Keiro Studiio is an understated luxury unisex salon in Pehladpur, Surajkund Road, Delhi offering precision hair, dewy beauty rituals, couture makeup, and minimalist nail artistry.">
   <link rel="icon" type="image/jpeg" href="images/logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,15 +29,6 @@
 
       /* Spacing & Layout */
       --max-container: 1120px;
-
-      /* Progressive enhancement token for oklab gradient interpolation */
-      --in-oklab: ;
-    }
-
-    @supports (background: linear-gradient(in oklab, white, black)) {
-      :root {
-        --in-oklab: in oklab;
-      }
     }
 
     *,
@@ -100,309 +91,6 @@
       max-inline-size: var(--max-container);
       margin-inline: auto;
       padding-inline: clamp(1.25rem, 5vw, 3.5rem);
-    }
-
-    /* ==========================================================================
-       FROSTED GLASS "LAUNCHING IN 5 DAYS" OVERLAY & TOP RIBBON
-       ========================================================================== */
-    .veil-checkbox {
-      position: absolute;
-      inline-size: 1px;
-      block-size: 1px;
-      overflow: clip;
-      clip: rect(0 0 0 0);
-      white-space: nowrap;
-    }
-
-    /* Persistent Top Launch Ribbon */
-    .launch-top-ribbon {
-      position: relative;
-      z-index: 45;
-      background: linear-gradient(90deg var(--in-oklab), var(--text-espresso), #382E2B, var(--text-espresso));
-      color: var(--bg-cashmere);
-      padding-block: 0.55rem;
-      padding-inline: 1rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      border-block-end: 1px solid var(--accent-blush);
-    }
-
-    .launch-top-ribbon-inner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: safe center;
-      justify-content: center;
-      gap: 0.5rem 1.25rem;
-      text-align: center;
-    }
-
-    .ribbon-dot {
-      display: inline-block;
-      inline-size: 0.45rem;
-      block-size: 0.45rem;
-      border-radius: 50%;
-      background-color: var(--accent-blush);
-      box-shadow: 0 0 8px var(--accent-blush);
-    }
-
-    .ribbon-reopen-btn {
-      cursor: pointer;
-      display: none;
-      align-items: safe center;
-      gap: 0.35rem;
-      padding-block: 0.2rem;
-      padding-inline: 0.65rem;
-      border: 1px solid rgba(217, 189, 182, 0.5);
-      border-radius: 999px;
-      font-size: 0.6875rem;
-      color: var(--bg-blush-tint);
-      transition: background-color 0.2s ease;
-    }
-
-    .ribbon-reopen-btn:hover {
-      background-color: rgba(217, 189, 182, 0.2);
-    }
-
-    /* Full-Viewport Light Frosted Glass Veil Over the Entire Site */
-    .launch-glass-veil {
-      position: fixed;
-      inset: 0;
-      z-index: 55;
-      display: grid;
-      place-items: safe center;
-      padding: clamp(1rem, 4vw, 2.5rem);
-      padding-inline-end: clamp(3.25rem, 5vw, 4rem);
-      overflow-y: auto;
-      overscroll-behavior: contain;
-      background: linear-gradient(
-        135deg var(--in-oklab),
-        rgba(248, 244, 240, 0.52) 0%,
-        rgba(247, 236, 233, 0.42) 50%,
-        rgba(241, 234, 226, 0.56) 100%
-      );
-      backdrop-filter: blur(7px) saturate(1.08);
-      -webkit-backdrop-filter: blur(7px) saturate(1.08);
-      transition: opacity 0.45s ease, visibility 0.45s ease;
-    }
-
-    /* Subtle slight blur on underlying site when veil is active for extra depth */
-    .site-backdrop-wrapper {
-      transition: filter 0.45s ease;
-      filter: blur(1.5px);
-    }
-
-    /* When user clicks "Peek Inside Brochure" OR when 5 days expire (.is-launched), lift the glass veil */
-    .veil-checkbox:checked ~ .launch-glass-veil,
-    body.is-launched .launch-glass-veil,
-    body.is-launched .launch-top-ribbon {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      display: none;
-    }
-
-    .veil-checkbox:checked ~ .site-backdrop-wrapper,
-    body.is-launched .site-backdrop-wrapper {
-      filter: none;
-    }
-
-    .veil-checkbox:checked ~ .launch-top-ribbon .ribbon-reopen-btn {
-      display: inline-flex;
-    }
-
-    /* Architectural Couture Launch Banner Card */
-    .launch-card {
-      position: relative;
-      inline-size: 100%;
-      max-inline-size: 40rem;
-      padding: clamp(1.75rem, 4.5vw, 3.25rem);
-      background: linear-gradient(
-        160deg var(--in-oklab),
-        rgba(248, 244, 240, 0.92),
-        rgba(247, 236, 233, 0.88)
-      );
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(140, 101, 92, 0.28);
-      box-shadow:
-        0 4px 12px rgba(36, 30, 28, 0.04),
-        0 18px 40px rgba(36, 30, 28, 0.10),
-        0 36px 80px rgba(36, 30, 28, 0.08),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.65);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.15rem;
-    }
-
-    .launch-card::before {
-      content: "";
-      position: absolute;
-      inset: 0.625rem;
-      border: 1px solid rgba(140, 101, 92, 0.16);
-      pointer-events: none;
-    }
-
-    .launch-logo {
-      inline-size: 4.5rem;
-      block-size: 4.5rem;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1.5px solid var(--accent-blush);
-      box-shadow:
-        0 4px 14px rgba(36, 30, 28, 0.12),
-        0 1px 3px rgba(36, 30, 28, 0.08);
-    }
-
-    .launch-pill-badge {
-      display: inline-flex;
-      align-items: safe center;
-      gap: 0.5rem;
-      padding-block: 0.35rem;
-      padding-inline: 1rem;
-      background-color: var(--bg-blush-soft);
-      border: 1px solid var(--accent-blush);
-      border-radius: 999px;
-      font-size: 0.6875rem;
-      font-weight: 500;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent-rosewood);
-    }
-
-    .launch-title {
-      font-size: clamp(2.25rem, 1.5rem + 3.2vw, 3.5rem);
-      letter-spacing: 0.01em;
-      line-height: 1.08;
-      color: var(--text-espresso);
-    }
-
-    .launch-title-italic {
-      font-style: italic;
-      color: var(--accent-rosewood);
-      font-weight: 400;
-    }
-
-    .launch-brand-sub {
-      font-size: 0.75rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-block-start: -0.35rem;
-    }
-
-    /* Creative 5-Day Countdown Lockup */
-    .countdown-showcase {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: stretch;
-      justify-content: center;
-      gap: 0.75rem;
-      inline-size: 100%;
-      margin-block: 0.25rem;
-    }
-
-    .countdown-box-main {
-      flex: 1 1 140px;
-      max-inline-size: 180px;
-      padding: 0.85rem 1.25rem;
-      background-color: var(--text-espresso);
-      color: var(--bg-cashmere);
-      border: 1px solid var(--text-espresso);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .countdown-number {
-      font-family: var(--font-serif);
-      font-size: clamp(2.25rem, 1.8rem + 1.5vw, 3rem);
-      line-height: 1;
-      letter-spacing: 0.04em;
-      color: var(--bg-blush-tint);
-    }
-
-    .countdown-unit {
-      font-size: 0.625rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--accent-blush);
-      margin-block-start: 0.25rem;
-    }
-
-    .countdown-details-box {
-      flex: 2 1 220px;
-      padding: 0.85rem 1.25rem;
-      background-color: rgba(248, 244, 240, 0.85);
-      border: 1px solid var(--border-hairline);
-      text-align: start;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0.25rem;
-    }
-
-    .countdown-details-kicker {
-      font-size: 0.625rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent-rosewood);
-    }
-
-    .countdown-details-text {
-      font-family: var(--font-serif);
-      font-size: 1.125rem;
-      color: var(--text-espresso);
-      line-height: 1.25;
-    }
-
-    .countdown-details-sub {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .launch-desc {
-      font-size: 0.9375rem;
-      color: var(--text-charcoal);
-      font-weight: 300;
-      line-height: 1.65;
-      max-inline-size: 48ch;
-      margin-inline: auto;
-    }
-
-    .launch-actions {
-      display: flex;
-      flex-wrap: wrap;
-      flex-wrap: balance;
-      justify-content: center;
-      gap: 0.75rem;
-      inline-size: 100%;
-      padding-block-start: 0.25rem;
-    }
-
-    .veil-dismiss-label {
-      cursor: pointer;
-      display: inline-flex;
-      align-items: safe center;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-block-start: 0.25rem;
-      padding-block: 0.45rem;
-      padding-inline: 1rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      border-block-end: 1px solid var(--border-hairline);
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .veil-dismiss-label:hover {
-      color: var(--text-espresso);
-      border-color: var(--accent-rosewood);
     }
 
     /* ==========================================================================
@@ -494,14 +182,14 @@
     }
 
     /* ==========================================================================
-       PHONE RIGHT-SIDE SOCIAL ACCESS RAIL (Above Frosted Veil for Instant Access)
+       PHONE RIGHT-SIDE SOCIAL ACCESS RAIL
        ========================================================================== */
     .social-rail-right {
       position: fixed;
       inset-inline-end: 0.625rem;
       inset-block-start: 50%;
       transform: translateY(-50%);
-      z-index: 65;
+      z-index: 40;
       display: flex;
       flex-direction: column;
       align-items: safe center;
@@ -981,11 +669,6 @@
         padding-inline-end: 3.65rem;
       }
 
-      .launch-glass-veil {
-        padding-inline-start: 0.85rem;
-        padding-inline-end: 3.35rem;
-      }
-
       .social-rail-right {
         inset-inline-end: 0.45rem;
         padding-block: 0.5rem;
@@ -997,8 +680,7 @@
         block-size: 2.5rem;
       }
 
-      .hero-cta-group,
-      .launch-actions {
+      .hero-cta-group {
         flex-direction: column;
       }
 
@@ -1015,19 +697,7 @@
 </head>
 <body>
 
-  <!-- Pure-CSS Checkbox Toggle to Allow Visitors to Peek Behind the Frosted Glass Veil -->
-  <input type="checkbox" id="veil-toggle" class="veil-checkbox" aria-label="Toggle Launch Overlay">
-
-  <!-- Top Launch Announcement Ribbon (Automatically removed after 5 days) -->
-  <div id="launch-ribbon" class="launch-top-ribbon" role="region" aria-label="Launch Announcement">
-    <div class="launch-top-ribbon-inner">
-      <span class="ribbon-dot" aria-hidden="true"></span>
-      <span id="ribbon-countdown-text">Grand Opening • Unveiling in 5 Days — Surajkund Road, Pehladpur</span>
-      <label for="veil-toggle" class="ribbon-reopen-btn">Show Launch Card</label>
-    </div>
-  </div>
-
-  <!-- Right-Side Quick Social Access (Always accessible above the frosted glass on phones & desktops) -->
+  <!-- Right-Side Quick Social Access (Designed for seamless one-thumb access on phones & desktops) -->
   <aside class="social-rail-right" aria-label="Social Media Quick Access">
     <span class="social-rail-label" aria-hidden="true">Follow</span>
     <a
@@ -1058,389 +728,274 @@
     </a>
   </aside>
 
-  <!-- FROSTED GLASS "LAUNCHING IN 5 DAYS" BANNER OVERLAY (Automatically removed on/after Oct 29, 2026) -->
-  <aside id="launch-veil" class="launch-glass-veil" aria-labelledby="launch-banner-title">
-    <div class="launch-card">
-      <img
-        src="images/logo.jpg"
-        alt="Da Keiro Studiio Official Crest"
-        class="launch-logo"
-        width="72"
-        height="72"
-      >
-      <span class="launch-pill-badge">
-        <span class="ribbon-dot" aria-hidden="true"></span>
-        <span>Grand Launch Announcement</span>
-      </span>
-
-      <h2 id="launch-banner-title" class="launch-title">
-        Launching <span class="launch-title-italic">Soon</span>
-      </h2>
-      <p class="launch-brand-sub">Da Keiro Studiio • Luxury Unisex Salon</p>
-
-      <div class="countdown-showcase" aria-label="Countdown to Launch">
-        <div class="countdown-box-main">
-          <span id="countdown-days-num" class="countdown-number">05</span>
-          <span id="countdown-days-unit" class="countdown-unit">Days to Go</span>
+  <!-- 1. Minimal Navbar (with Official Facebook Logo) -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#" class="brand" aria-label="Da Keiro Studiio Home">
+        <img
+          src="images/logo.jpg"
+          alt="Da Keiro Studiio Crest Logo"
+          class="brand-logo"
+          width="46"
+          height="46"
+        >
+        <div class="brand-text">
+          <span class="brand-name">Da Keiro Studiio</span>
+          <span class="brand-tagline">Luxury Unisex Salon</span>
         </div>
-        <div class="countdown-details-box">
-          <span id="countdown-formatted" class="countdown-details-kicker">The Sanctuary Awaits</span>
-          <p class="countdown-details-text">Hair • Beauty • Makeup • Nails</p>
-          <p class="countdown-details-sub">Opp. CNG Pump, Surajkund Road, Pehladpur, Delhi 110044</p>
-        </div>
-      </div>
-
-      <p class="launch-desc">
-        Our doors open for an understated personal luxury experience. Connect with us directly for launch inquiries or early welcoming privileges.
-      </p>
-
-      <div class="launch-actions">
-        <a href="tel:8130885884" class="btn btn-primary">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      </a>
+      <div class="nav-actions">
+        <a href="tel:8130885884" class="nav-phone" aria-label="Call 8130885884">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
           </svg>
-          <span>Call 8130885884</span>
-        </a>
-        <a href="https://wa.me/918130885884" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-          </svg>
-          <span>WhatsApp Us</span>
+          <span>8130885884</span>
         </a>
       </div>
-
-      <label for="veil-toggle" class="veil-dismiss-label">
-        <span>Peek Inside Full Brochure Behind Glass</span>
-        <span aria-hidden="true">→</span>
-      </label>
     </div>
-  </aside>
+  </header>
 
-  <!-- FULL WEBSITE BEHIND THE LIGHT BLUR GLASS -->
-  <div class="site-backdrop-wrapper">
-    <!-- 1. Minimal Navbar (with Official Facebook Logo) -->
-    <header class="site-header">
-      <div class="container navbar">
-        <a href="#" class="brand" aria-label="Da Keiro Studiio Home">
-          <img
-            src="images/logo.jpg"
-            alt="Da Keiro Studiio Crest Logo"
-            class="brand-logo"
-            width="46"
-            height="46"
-          >
-          <div class="brand-text">
-            <span class="brand-name">Da Keiro Studiio</span>
-            <span class="brand-tagline">Luxury Unisex Salon</span>
+  <main>
+    <!-- 2. Clean Hero (with Official Studio Interior Photo) -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-inner">
+          <span class="hero-eyebrow">Understated Personal Luxury</span>
+          <h1 id="hero-heading" class="hero-title">Da Keiro Studiio</h1>
+          <p class="hero-subtitle">Luxury Unisex Salon</p>
+          <p class="hero-intro">
+            A calm, intimate sanctuary dedicated to modern hair craft, luminous skin rituals, couture makeup, and refined nail artistry. Thoughtfully tailored for effortless elegance every day.
+          </p>
+          <p class="hero-hours">Open Daily • 10:30 AM – 8:30 PM</p>
+          <div class="hero-cta-group">
+            <a href="tel:8130885884" class="btn btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>Call 8130885884</span>
+            </a>
+            <a href="https://wa.me/918130885884" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              <span>WhatsApp Us</span>
+            </a>
           </div>
-        </a>
-        <div class="nav-actions">
-          <a href="tel:8130885884" class="nav-phone" aria-label="Call 8130885884">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-            <span>8130885884</span>
-          </a>
+        </div>
+
+        <figure class="hero-media">
+          <img
+            src="images/studio-interior.jpg"
+            alt="Interior of Da Keiro Studiio luxury unisex salon featuring arched mirrors and cashmere beige styling chairs"
+            class="hero-image"
+            fetchpriority="high"
+            width="960"
+            height="540"
+          >
+          <figcaption class="hero-caption">
+            <span>The Sanctuary</span>
+            <span>Surajkund Road, Delhi</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 3. 4 Core Services Overview + Subtle Studio Photos -->
+    <section class="section" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Curated Menu</span>
+          <h2 id="services-heading" class="section-title">Core Services</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-number">01</span>
+            <h3 class="service-name">Hair</h3>
+            <p class="service-desc">Precision cuts, balayage, keratin, unisex styling</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">02</span>
+            <h3 class="service-name">Beauty</h3>
+            <p class="service-desc">Hydra facials, dewy skin treatments, detox care</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">03</span>
+            <h3 class="service-name">Makeup</h3>
+            <p class="service-desc">Bridal couture, red carpet, soft glam</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">04</span>
+            <h3 class="service-name">Nails</h3>
+            <p class="service-desc">Gel extensions, Russian manicure, minimalist nail art</p>
+          </article>
+        </div>
+
+        <!-- Subtle Studio Glimpses from Official Facebook Portfolio -->
+        <div class="studio-glimpse" aria-label="Studio Portfolio Glimpses">
+          <div class="glimpse-header">
+            <h3 class="glimpse-title">Inside the Studio</h3>
+            <span class="glimpse-note">Selected Moments • @dakeirostudiio</span>
+          </div>
+          <div class="glimpse-grid">
+            <figure class="glimpse-item">
+              <img
+                src="images/hair-styling.jpg"
+                alt="Dimensional balayage and glossy hair waves styled at Da Keiro Studiio"
+                class="glimpse-img"
+                loading="lazy"
+                width="600"
+                height="600"
+              >
+              <figcaption class="glimpse-caption">Signature Hair &amp; Balayage</figcaption>
+            </figure>
+
+            <figure class="glimpse-item">
+              <img
+                src="images/beauty-glam.jpg"
+                alt="Soft glam beauty and hair transformation at Da Keiro Studiio"
+                class="glimpse-img"
+                loading="lazy"
+                width="600"
+                height="600"
+              >
+              <figcaption class="glimpse-caption">Soft Glam &amp; Beauty</figcaption>
+            </figure>
+
+            <figure class="glimpse-item">
+              <img
+                src="images/nail-art.jpg"
+                alt="Minimalist shimmer and gold-leaf nail artistry at Da Keiro Studiio"
+                class="glimpse-img"
+                loading="lazy"
+                width="600"
+                height="600"
+              >
+              <figcaption class="glimpse-caption">Minimalist Nail Artistry</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <!-- 2. Clean Hero (with Official Studio Interior Photo) -->
-      <section class="hero" aria-labelledby="hero-heading">
-        <div class="container hero-grid">
-          <div class="hero-inner">
-            <span class="hero-eyebrow">Understated Personal Luxury</span>
-            <h1 id="hero-heading" class="hero-title">Da Keiro Studiio</h1>
-            <p class="hero-subtitle">Luxury Unisex Salon</p>
-            <p class="hero-intro">
-              A calm, intimate sanctuary dedicated to modern hair craft, luminous skin rituals, couture makeup, and refined nail artistry. Thoughtfully tailored for effortless elegance every day.
-            </p>
-            <p class="hero-hours">Open Daily • 10:30 AM – 8:30 PM</p>
-            <div class="hero-cta-group">
-              <a href="tel:8130885884" class="btn btn-primary">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-                <span>Call 8130885884</span>
-              </a>
-              <a href="https://wa.me/918130885884" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
-                <span>WhatsApp Us</span>
-              </a>
-            </div>
-          </div>
+    <!-- 4. Visit & Contact -->
+    <section class="section visit-section" aria-labelledby="visit-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Sanctuary &amp; Inquiries</span>
+          <h2 id="visit-heading" class="section-title">Visit &amp; Contact</h2>
+        </div>
 
-          <figure class="hero-media">
-            <img
-              src="images/studio-interior.jpg"
-              alt="Interior of Da Keiro Studiio luxury unisex salon featuring arched mirrors and cashmere beige styling chairs"
-              class="hero-image"
-              fetchpriority="high"
-              width="960"
-              height="540"
+        <div class="visit-grid">
+          <!-- Address & Google Maps -->
+          <div class="visit-block">
+            <span class="visit-label">Location</span>
+            <h3 class="visit-heading">The Studio</h3>
+            <address class="visit-text">
+              Shop No.5, Basement, Below Redtape Showroom,<br>
+              Opp. CNG Pump, Surajkund Road,<br>
+              Pehladpur, Delhi 110044
+            </address>
+            <p class="visit-text">Open Daily • 10:30 AM – 8:30 PM</p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&amp;query=Da+Keiro+Studiio+Shop+No.5+Basement+Below+Redtape+Showroom+Opp+CNG+Pump+Surajkund+Road+Pehladpur+Delhi+110044"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-action-link"
             >
-            <figcaption class="hero-caption">
-              <span>The Sanctuary</span>
-              <span>Surajkund Road, Delhi</span>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <!-- 3. 4 Core Services Overview + Subtle Studio Photos -->
-      <section class="section" aria-labelledby="services-heading">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-kicker">Curated Menu</span>
-            <h2 id="services-heading" class="section-title">Core Services</h2>
+              <span>Open in Google Maps</span>
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
 
-          <div class="services-grid">
-            <article class="service-card">
-              <span class="service-number">01</span>
-              <h3 class="service-name">Hair</h3>
-              <p class="service-desc">Precision cuts, balayage, keratin, unisex styling</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">02</span>
-              <h3 class="service-name">Beauty</h3>
-              <p class="service-desc">Hydra facials, dewy skin treatments, detox care</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">03</span>
-              <h3 class="service-name">Makeup</h3>
-              <p class="service-desc">Bridal couture, red carpet, soft glam</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">04</span>
-              <h3 class="service-name">Nails</h3>
-              <p class="service-desc">Gel extensions, Russian manicure, minimalist nail art</p>
-            </article>
+          <!-- Direct Phone & Email -->
+          <div class="visit-block">
+            <span class="visit-label">Direct Line</span>
+            <h3 class="visit-heading">Get in Touch</h3>
+            <ul class="contact-list">
+              <li>
+                <a href="tel:8130885884" class="contact-link">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span>8130885884</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:dakeirostudiio@gmail.com" class="contact-link">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>dakeirostudiio@gmail.com</span>
+                </a>
+              </li>
+            </ul>
+            <a href="https://wa.me/918130885884" target="_blank" rel="noopener noreferrer" class="inline-action-link">
+              <span>Message on WhatsApp</span>
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
 
-          <!-- Subtle Studio Glimpses from Official Facebook Portfolio -->
-          <div class="studio-glimpse" aria-label="Studio Portfolio Glimpses">
-            <div class="glimpse-header">
-              <h3 class="glimpse-title">Inside the Studio</h3>
-              <span class="glimpse-note">Selected Moments • @dakeirostudiio</span>
-            </div>
-            <div class="glimpse-grid">
-              <figure class="glimpse-item">
-                <img
-                  src="images/hair-styling.jpg"
-                  alt="Dimensional balayage and glossy hair waves styled at Da Keiro Studiio"
-                  class="glimpse-img"
-                  loading="lazy"
-                  width="600"
-                  height="600"
-                >
-                <figcaption class="glimpse-caption">Signature Hair &amp; Balayage</figcaption>
-              </figure>
-
-              <figure class="glimpse-item">
-                <img
-                  src="images/beauty-glam.jpg"
-                  alt="Soft glam beauty and hair transformation at Da Keiro Studiio"
-                  class="glimpse-img"
-                  loading="lazy"
-                  width="600"
-                  height="600"
-                >
-                <figcaption class="glimpse-caption">Soft Glam &amp; Beauty</figcaption>
-              </figure>
-
-              <figure class="glimpse-item">
-                <img
-                  src="images/nail-art.jpg"
-                  alt="Minimalist shimmer and gold-leaf nail artistry at Da Keiro Studiio"
-                  class="glimpse-img"
-                  loading="lazy"
-                  width="600"
-                  height="600"
-                >
-                <figcaption class="glimpse-caption">Minimalist Nail Artistry</figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. Visit & Contact -->
-      <section class="section visit-section" aria-labelledby="visit-heading">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-kicker">Sanctuary &amp; Inquiries</span>
-            <h2 id="visit-heading" class="section-title">Visit &amp; Contact</h2>
-          </div>
-
-          <div class="visit-grid">
-            <!-- Address & Google Maps -->
-            <div class="visit-block">
-              <span class="visit-label">Location</span>
-              <h3 class="visit-heading">The Studio</h3>
-              <address class="visit-text">
-                Shop No.5, Basement, Below Redtape Showroom,<br>
-                Opp. CNG Pump, Surajkund Road,<br>
-                Pehladpur, Delhi 110044
-              </address>
-              <p class="visit-text">Open Daily • 10:30 AM – 8:30 PM</p>
+          <!-- Official Social Pages -->
+          <div class="visit-block">
+            <span class="visit-label">Social Journal</span>
+            <h3 class="visit-heading">Connect With Us</h3>
+            <p class="visit-text">
+              Explore our latest hair transformations, bridal couture looks, and studio moments on our official pages.
+            </p>
+            <div class="social-links-row">
               <a
-                href="https://www.google.com/maps/search/?api=1&amp;query=Da+Keiro+Studiio+Shop+No.5+Basement+Below+Redtape+Showroom+Opp+CNG+Pump+Surajkund+Road+Pehladpur+Delhi+110044"
+                href="https://www.instagram.com/dakeirostudiio/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-action-link"
+                class="social-pill"
               >
-                <span>Open in Google Maps</span>
-                <span aria-hidden="true">→</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>Instagram</span>
               </a>
-            </div>
-
-            <!-- Direct Phone & Email -->
-            <div class="visit-block">
-              <span class="visit-label">Direct Line</span>
-              <h3 class="visit-heading">Get in Touch</h3>
-              <ul class="contact-list">
-                <li>
-                  <a href="tel:8130885884" class="contact-link">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                    <span>8130885884</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:shailesh12sharma@gmail.com" class="contact-link">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                      <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <span>shailesh12sharma@gmail.com</span>
-                  </a>
-                </li>
-              </ul>
-              <a href="https://wa.me/918130885884" target="_blank" rel="noopener noreferrer" class="inline-action-link">
-                <span>Message on WhatsApp</span>
-                <span aria-hidden="true">→</span>
+              <a
+                href="https://www.facebook.com/p/Da-Keiro-Studiio-61566415734155/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-pill"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span>Facebook</span>
               </a>
-            </div>
-
-            <!-- Official Social Pages -->
-            <div class="visit-block">
-              <span class="visit-label">Social Journal</span>
-              <h3 class="visit-heading">Connect With Us</h3>
-              <p class="visit-text">
-                Explore our latest hair transformations, bridal couture looks, and studio moments on our official pages.
-              </p>
-              <div class="social-links-row">
-                <a
-                  href="https://www.instagram.com/dakeirostudiio/?hl=en"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="social-pill"
-                >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                  </svg>
-                  <span>Instagram</span>
-                </a>
-                <a
-                  href="https://www.facebook.com/p/Da-Keiro-Studiio-61566415734155/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="social-pill"
-                >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                  </svg>
-                  <span>Facebook</span>
-                </a>
-              </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
-
-    <!-- 5. Minimal Footer -->
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="footer-brand">
-          <img
-            src="images/logo.jpg"
-            alt="Da Keiro Studiio Logo"
-            class="footer-logo"
-            loading="lazy"
-            width="32"
-            height="32"
-          >
-          <p>&copy; 2026 Da Keiro Studiio. All rights reserved.</p>
-        </div>
-        <p class="footer-address">Shop No.5, Basement, Below Redtape Showroom, Surajkund Road, Pehladpur, Delhi 110044</p>
       </div>
-    </footer>
-  </div>
+    </section>
+  </main>
 
-  <!-- Automatic 5-Day Launch Banner Removal using Temporal API (with polyfill fallback) -->
-  <script type="module">
-    async function evaluateLaunchWindow() {
-      if (typeof Temporal === 'undefined') {
-        const module = await import('https://esm.sh/@js-temporal/polyfill');
-        globalThis.Temporal = module.Temporal;
-      }
+  <!-- 5. Minimal Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img
+          src="images/logo.jpg"
+          alt="Da Keiro Studiio Logo"
+          class="footer-logo"
+          loading="lazy"
+          width="32"
+          height="32"
+        >
+        <p>&copy; 2026 Da Keiro Studiio. All rights reserved.</p>
+      </div>
+      <p class="footer-address">Shop No.5, Basement, Below Redtape Showroom, Surajkund Road, Pehladpur, Delhi 110044</p>
+    </div>
+  </footer>
 
-      const tz = 'Asia/Kolkata';
-      const now = Temporal.Now.zonedDateTimeISO(tz);
-
-      // Launch Date: 5 days from 2026-10-24 -> 2026-10-29 at 10:30:00 IST
-      const launchDateStr = '2026-10-29';
-      const launchTimeStr = '10:30:00';
-      const launchMoment = Temporal.PlainDate.from(launchDateStr)
-        .toPlainDateTime(launchTimeStr)
-        .toZonedDateTime(tz);
-
-      const timeRemaining = now.until(launchMoment, {
-        largestUnit: 'day',
-        smallestUnit: 'hour',
-        roundingMode: 'ceil'
-      });
-
-      // Automatically remove the frosted glass banner once 5 days have elapsed
-      if (timeRemaining.sign <= 0) {
-        document.body.classList.add('is-launched');
-        document.getElementById('launch-veil')?.remove();
-        document.getElementById('launch-ribbon')?.remove();
-        return;
-      }
-
-      const daysLeft = Math.max(1, timeRemaining.days + (timeRemaining.hours > 0 ? 1 : 0));
-      const daysEl = document.getElementById('countdown-days-num');
-      const unitEl = document.getElementById('countdown-days-unit');
-      const ribbonTextEl = document.getElementById('ribbon-countdown-text');
-      const formattedEl = document.getElementById('countdown-formatted');
-
-      if (daysEl) {
-        daysEl.textContent = String(daysLeft).padStart(2, '0');
-      }
-      if (unitEl) {
-        unitEl.textContent = daysLeft === 1 ? 'Day to Go' : 'Days to Go';
-      }
-      if (ribbonTextEl) {
-        ribbonTextEl.textContent = `Grand Opening • Unveiling in ${daysLeft} ${daysLeft === 1 ? 'Day' : 'Days'} — Surajkund Road, Pehladpur`;
-      }
-      if (formattedEl && typeof timeRemaining.toLocaleString === 'function') {
-        formattedEl.textContent = `Unveiling in ${timeRemaining.toLocaleString('en-US', { style: 'narrow' })}`;
-      }
-    }
-
-    evaluateLaunchWindow();
-  </script>
 </body>
 </html>
