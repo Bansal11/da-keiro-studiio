@@ -1,0 +1,28 @@
+name: Automatically Remove Launch Banner After 5 Days
+
+on:
+  schedule:
+    # Runs at 05:00 UTC (10:30 AM IST) on October 29, 2026 (5 days after Oct 24, 2026)
+    - cron: '0 5 29 10 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unveil:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Activate launched state on body
+        run: |
+          sed -i 's/<body>/<body class="is-launched">/' index.html
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet; then
+            git add index.html
+            git commit -m "chore: automatically remove 5-day launch banner"
+            git push
+          fi
